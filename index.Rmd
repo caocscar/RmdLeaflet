@@ -19,7 +19,7 @@ geojson = getURL('http://gis-michigan.opendata.arcgis.com/datasets/67a8ff23b5f54
 ```
 
 ## Leaflet Map
-This sets up the leaflet map using the Stamen watercolor tiles, markers and geojson data file.
+This sets up the leaflet map using Stamen watercolor map tiles, markers and geojson file.
 ```{r leaflet}
 map = leaflet(width="100%") %>% 
     setView(-86, 45, zoom=6) %>%
