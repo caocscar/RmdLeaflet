@@ -1,5 +1,5 @@
 ---
-title: "Leaflet Map"
+title: "RMarkdown Leaflet Map"
 author: "Alex Cao"
 date: "May 2, 2017"
 output: html_document
@@ -10,8 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Data
-The geojson data comes from the Michigan GIS Open Data Portal.
-
+The geojson data comes from the <a href='http://gis-michigan.opendata.arcgis.com/'>Michigan GIS Open Data Portal</a>.
 ```{r geojson}
 library(leaflet)
 library(RCurl)
@@ -26,8 +25,8 @@ map = leaflet(width="100%") %>%
     setView(-86, 45, zoom=6) %>%
     addTiles(urlTemplate='http://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png', attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>', ) %>%
     addGeoJSON(geojson, color='#ee0000', weight=2) %>% 
-    addCircleMarkers(lng=-84.555, lat=42.732, color='#0000ee', radius=5, label='Lansing', popup='Capital of Michigan') %>%
-    addCircleMarkers(lng=-83.045, lat=42.331, color='#00ee00', fill=FALSE, radius=3, weight=1, opacity=1, label='Detroit') %>%
+    addCircleMarkers(lng=-84.555, lat=42.732, color='#0000ee', radius=3, label='Lansing', popup='Capital of Michigan') %>%
+    addCircleMarkers(lng=-83.045, lat=42.331, color='#00ee00', fill=FALSE, radius=5, weight=1, opacity=1, label='Detroit') %>%
     addCircleMarkers(lng=-84.627, lat=45.868, color='#ee0000', fill=FALSE, radius=10, weight=4, opacity=1, label='Horse Island')
 ```
 
